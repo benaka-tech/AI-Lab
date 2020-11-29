@@ -1,0 +1,7 @@
+#!/home/benaka/Desktop/AI-Lab/venv/bin/python3
+#
+# Call the graphical interface for Epydoc.
+#
+
+from epydoc.gui import gui
+gui()
