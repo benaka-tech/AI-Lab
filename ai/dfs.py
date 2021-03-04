@@ -12,7 +12,7 @@ class Graph:
         if source == target : return True
   
         if maxDepth <= 0 : return False      
-  	   # recursively traversing the graph while searching
+         # recursively traversing the graph while searching
         for i in self.graph[source]: 
                 if(self.DLS(i, target, maxDepth-1)):     
                     return True
@@ -36,3 +36,4 @@ if g.DLS(source, target, maxDepth) == True:
     print(f"Target {target} is reachable from source {source} within max depth {maxDepth}")
 else: 
     print(f"Target {target} is NOT reachable from source {source} within max depth {maxDepth}")
+

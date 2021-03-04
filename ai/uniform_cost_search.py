@@ -58,3 +58,4 @@ def ucs(start, goal, g):
             frontier.push(new_path, new_cost)      
  
 ucs('Arad', 'Bucharest', path_costs('./paths.txt'))
+

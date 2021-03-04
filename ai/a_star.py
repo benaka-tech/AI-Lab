@@ -11,7 +11,7 @@ class PQueue():
     def _sort(self):
         self.keys = sorted(self.dict, key=self.dict.get, reverse=True)
         self.sorted = True
-
+ 
     def pop(self):
         try:
             if not self.sorted:
@@ -22,16 +22,15 @@ class PQueue():
             return key, value
         except:
             return None
-
+ 
 def heuristics(path):
     h = {}
     with open(path, 'r') as file:
         for line in file:
             k, v = line.split(", ")
             h[k] = int(v)
-            print(h)
     return h
-
+ 
 def path_costs(path):
     c = {}
     with open(path, 'r') as file:
@@ -45,9 +44,8 @@ def path_costs(path):
             if e2 not in c:
                 c[e2] = {}
             c[e1][e2] = c[e2][e1] = v
-            print(c)
     return c
-
+ 
 def a_star(start, goal, h, g):
     frontier = PQueue()
     # pushing path and cost to pqueue
@@ -69,5 +67,5 @@ def a_star(start, goal, h, g):
             # adding new path and cost to pqueue
             frontier.push(new_path, new_cost) 
             
-
+ 
 a_star('Arad', 'Bucharest', heuristics('./heuristics.txt'), path_costs('./paths.txt'))
